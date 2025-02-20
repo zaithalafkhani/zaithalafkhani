@@ -31,6 +31,17 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "WsMY25VPFtpFUdmeX",
+      });
+   })();
+</script>
 </head>
 
 <body>
@@ -62,7 +73,7 @@
                         <a href="product.html" class="nav-item nav-link">Products</a>
                         <a href="contact.html" class="nav-item nav-link active">Contact</a>
                     </div>
-                    <a href="contact.html" class="btn btn-dark py-2 px-4 d-none d-lg-inline-block">Shop Now</a>
+                    <a href="product.html" class="btn btn-dark py-2 px-4 d-none d-lg-inline-block">Shop Now</a>
                 </div>
             </nav>
         </div>
@@ -107,7 +118,7 @@
                         <div class="border py-5 px-3">
                             <i class="fa fa-envelope fa-3x text-dark mb-4"></i>
                             <h5 class="text-white">Mail Us</h5>
-                            <h5 class="fw-light text-white"><br>junaidtk2001@gmail.com</h5>
+                            <h5 class="fw-light text-white"><br>shop@zaithalafkhani.com</h5>
                         </div>
                     </div>
                 </div>
@@ -125,7 +136,8 @@
             <div class="row g-5">
                 <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <form>
+                        <form id="contact-form">
+
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -184,8 +196,9 @@
                 <h5 class="mb-4">Get In Touch</h5>
                 <p><i class="fa fa-map-marker-alt me-3"></i>Kasavu kerala, Kovalam, 
                     Thiruvananthapuram, Kerala</p>
-                <p><i class="fa fa-phone-alt me-3"></i>+91 9947301015</p>
-                <p><i class="fa fa-envelope me-3"></i>junaidtk2001@gmail.com</p>
+                    <p><i class="fa fa-envelope me-3"></i><a href="mailto:shop@zaithalafkhani.com">shop@zaithalafkhani.com</a></p>
+                    <p><i class="fa fa-phone-alt me-3"></i><a href="https://wa.me/919947301015" target="_blank">+91 9947301015</a></p>
+                    
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-primary me-1" href="contact.html"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-outline-primary me-1" href="contact.html"><i class="fab fa-facebook-f"></i></a>
@@ -196,14 +209,14 @@
             </div>
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                 <h5 class="mb-4">Our Products</h5>
-                <a class="btn btn-link" href="product.html">Zaith Al Afkhani Hair Oil 1Litre</a>
-                <a class="btn btn-link" href="product.html">Zaith Al Afkhani Hair Oil 500ml</a>
+                <a class="btn btn-link" href="prodect_1liter.html">Zaith Al Afkhani Hair Oil 1Litre</a>
+                <a class="btn btn-link" href="prodect_priveiw.html">Zaith Al Afkhani Hair Oil 500ml</a>
             </div>
-            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+            <!-- <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                 <h5 class="mb-4">Popular Link</h5>
                 <a class="btn btn-link" href="contact.html">About Us</a>
                 <a class="btn btn-link" href="contact.html">Contact Us</a>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="container wow fadeIn" data-wow-delay="0.1s">
@@ -213,7 +226,7 @@
                     &copy; <a class="border-bottom" href="#">Zaith Al afkhani</a>, All Right Reserved.
 
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> -->
                 </div>
             
             </div>
@@ -238,6 +251,24 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            emailjs.send("service_ymu9wwn", "template_pcbw4ou", {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+            }).then(function(response) {
+                alert('Message Sent Successfully!');
+            }, function(error) {
+                alert('Failed to Send Message. Please try again.');
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
