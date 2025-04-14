@@ -516,7 +516,7 @@
     width: 60px;
     height: 60px;
     bottom: 100px;
-    right: 35px;
+    right: 30px;
     background-color: #25d366; /* WhatsApp green */
     color: white;
     border-radius: 50px;
@@ -539,6 +539,6 @@
         font-size: 25px;
         line-height: 50px;
         bottom: 100px;
-        right: 35px;
+        right: 30px;
     }
 }
