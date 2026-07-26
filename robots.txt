@@ -1,0 +1,26 @@
+# robots.txt for www.zaithalafkhani.com
+# https://www.zaithalafkhani.com
+
+User-agent: *
+Allow: /
+
+# AI Search Crawlers (AEO/LLMO - allow these for AI visibility)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block training-only crawlers (optional - uncomment if desired)
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /
+
+Sitemap: https://www.zaithalafkhani.com/sitemap.xml

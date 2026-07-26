@@ -510,6 +510,12 @@
   .btn-buy:hover {
     background-color: #3d5940;
   }
+  /* Navbar Toggler */
+  .navbar-toggler:hover {
+      background-color: #6c9449;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+
   /* WhatsApp Floating Icon */
 .whatsapp-icon {
     position: fixed;
